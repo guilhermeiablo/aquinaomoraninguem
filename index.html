@@ -19,6 +19,8 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   
 
     <!-- Custom styles for this template -->
@@ -29,6 +31,23 @@
 
      <!-- BODY -->
   <body>
+
+    <!-- IMAGES -->
+  	      <div style="position: fixed; top: 4.5rem; right:2.5rem; align-self: right; width: 400px">
+        <img src="img/title.png" style="width: 400px; z-index: 50" />
+        <p style="font-family: 'Ubuntu' sans-serif; font-size: 11pt; color: white; text-align: justify; text-justify: inter-word; max-width: 390px; padding-left: 20px;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+Section 1.10.32 of "de Finibus Bonorum et Malorum", written by Cicero in 45 BC
+"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non n
+</p>
+      </div>
+
+      <div style="position: fixed; bottom: 2rem; right:2.5rem; align-self: right">
+        <img src="img/pic.png" style="width: 390px; z-index: 50" />
+      </div>
+
+
+<!-- NAV BAR -->
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">aqui não mora ninguém</a>
@@ -56,26 +75,26 @@
             </div>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-      </div>
+       </div>
     </nav>
 
-    <div id="mapid" style="position:absolute; top:3.5rem; left:0; right:0; bottom:0"></div>
+  
+
+    <div id="mapid" style="position:fixed; top:3.5rem; left:0; right:0; bottom:0; z-index: -50"></div>
+     
     <script>
 
-  var map = L.map('mapid').setView([-28.329078, -49.011965], 5);
+  var map = L.map('mapid').setView([-15.377339, -51.872039], 5);
+  
   map.createPane('ninguemtiles');
-  map.getPane('ninguemtiles').style.zIndex = 650;
+  map.getPane('ninguemtiles').style.zIndex = 550;
   map.getPane('ninguemtiles').style.pointerEvents = 'none';
 
   map.createPane('base');
   map.getPane('base').style.zIndex = 150;
 
   map.createPane('labels');
-  map.getPane('labels').style.zIndex = 550;
+  map.getPane('labels').style.zIndex = 650;
 
 
 
@@ -97,7 +116,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/plano-c/cjeo5z8dlwto62rt5w1g1rr2n/
       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
       }).addTo(map);
 
-L.tileLayer('https://perso-etudiant.u-pem.fr/~gmarqu03/tiles/{z}/{x}/{y}.png', {
+L.tileLayer('http://perso-etudiant.u-pem.fr/~gmarqu03/tiles/{z}/{x}/{y}.png', {
         maxZoom: 12,
         opacity: 0.8,
         pane: 'ninguemtiles',
