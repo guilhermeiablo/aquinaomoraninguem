@@ -67,6 +67,16 @@
     <script>
 
   var map = L.map('mapid').setView([-28.329078, -49.011965], 5);
+  map.createPane('ninguemtiles');
+  map.getPane('ninguemtiles').style.zIndex = 650;
+  map.getPane('ninguemtiles').style.pointerEvents = 'none';
+
+  map.createPane('base');
+  map.getPane('base').style.zIndex = 150;
+
+  map.createPane('labels');
+  map.getPane('labels').style.zIndex = 550;
+
 
 
 
@@ -81,6 +91,7 @@
 
 L.tileLayer('https://api.mapbox.com/styles/v1/plano-c/cjeo5z8dlwto62rt5w1g1rr2n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGxhbm8tYyIsImEiOiJjajEyam41bWowNmF0MzNwZWduMXoxMmd4In0.S69rwtUIWB6EXgONLZbplw', {
         maxZoom: 12,
+        pane: 'base',
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://ibge.gov.br">IBGE</a> and ' +
       '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
       'Imagery © <a href="http://mapbox.com">Mapbox</a>',
@@ -89,10 +100,12 @@ L.tileLayer('https://api.mapbox.com/styles/v1/plano-c/cjeo5z8dlwto62rt5w1g1rr2n/
 L.tileLayer('https://etudiant.u-pem.fr/~gmarqu03/tiles/Aqui_nao_mora_ninguem/{z}/{x}/{y}.png', {
         maxZoom: 12,
         opacity: 0.8,
+        pane: 'ninguemtiles',
       }).addTo(map);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/plano-c/cjeo5xjqtfdxg2ro69wzpfbb8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoicGxhbm8tYyIsImEiOiJjajEyam41bWowNmF0MzNwZWduMXoxMmd4In0.S69rwtUIWB6EXgONLZbplw', {
         maxZoom: 12,
+        pane: 'labels',
         opacity: 0.8
       }).addTo(map);
 
