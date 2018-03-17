@@ -1,7 +1,7 @@
 # aquinaomoraninguem
 
 <h2>1. Pre-processing in QGis</h2>
-<p>After downloading data from the <a href="ftp://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/grade_estatistica/censo_2010/"></a>Brazilian 2010 Census Statistic Grid (56 shapefiles), simple operation using python for selecting only squares in which population is not zero. For the rendering to be more efficient in TileMill, we erased every square from a Brazil administrative boundary polygon. </p>
+<p>After downloading data from the <a href="ftp://geoftp.ibge.gov.br/recortes_para_fins_estatisticos/grade_estatistica/censo_2010/"> Brazilian 2010 Census Statistic Grid </a> (56 shapefiles), simple operation using python for selecting only squares in which population is not zero. For the rendering to be more efficient in TileMill, we erased every square from a Brazil administrative boundary polygon. </p>
 
 <h2>2. TileMill</h2>
 <p>Following, we open our resultant shapefile in TileMill with the CSS Carto rule comp-op: dst-out. We add a shapefile containing water polygons (obtained through openstreetmap) with the rule comp-op: src-out. Export result in MBTiles format.</p>
