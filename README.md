@@ -29,7 +29,7 @@ Download and install mbutil:
 <br/>mb-util -h to verify it worked.
 <br/>Convert the tiles using the following command: 
 <br/>mb-util --image_format=png aquinaomoraninguem.mbtiles aquinaomoraninguem
-It will generate a folder, in my case aquinaomoraninguem, which will contain all of your map tiles in PNG format. 
+<br/>It should generate a folder, in my case aquinaomoraninguem, which will contain all of your map tiles in PNG format. 
 
 This should generate a ~400MB sized folder.</p>
 
