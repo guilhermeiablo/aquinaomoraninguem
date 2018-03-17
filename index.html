@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="Mapa das áreas inabitadas do território brasileiro.">
     <meta name="author" content="Plano C">
-    <meta property="og:image" content="https://raw.githubusercontent.com/guilhermeiablo/aquinaomoraninguem/master/img/thumb.png">
+    <meta property="og:image" content="img/thumb.png">
     <link rel="icon" href="favicon.ico">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"
@@ -15,6 +15,7 @@
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
    integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
    crossorigin=""></script>
+   <script src="js/leaflet-providers.js"></script>
 
     <title>Aqui não mora ninguém</title>
 
@@ -33,27 +34,59 @@
 
      <!-- BODY -->
   <body>
+  <div style="position:fixed; bottom:16px; left: 16px; width: 5rem">
+  <a href="https://plano-c.com" > <img src="img/us.svg" style="width:2rem; opacity:0.5"></a>
+    <a href="https://plano-c.com" > <img src="img/fr.svg" style="width:2rem; opacity:0.5"></a>
+
+  </div>
+
+  	<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/fr_CA/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     <!-- IMAGES -->
-  	   <div style="position: fixed; top: 0.7rem; right:2.5rem; align-self: right; width: 20vw">
+  	   <div style="position: fixed; top:0; right:0; bottom:16px; width: 22.5vw; background-color: #74D0F0;"> </div>
+  	   <div style="position: fixed; top: 0.7rem; right:2.2rem; align-self: right; width: 19.8vw">
         <img src="img/title.png" style="width: 20vw; z-index: 50" />
-        <div style="position: fixed; bottom: 17rem; top:12rem; right:2.5rem; width:20vw; overflow: scroll;">
+        <div class="scrollbar" id="style-8" style="position: fixed; bottom: 20rem; top:12rem; right:2.2rem; width:20vw; overflow-y: scroll;  overflow-x: hidden">
+        <script type="text/javascript">
+        	$(document).ready(function () {
+          if (!$.browser.webkit) {
+              $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
+          }
+      });
+        </script>
         <p style="font-family: 'Ubuntu', sans-serif; font-size: 9.5pt; color: white; text-align: justify; text-justify: inter-word; max-width: 390px; padding-right:5px; padding-left: 15px;"> 
 
-        <b>O que é essa área em amarelo?</b><br/>A grade estatística, do Instituto Brasileiro de Geografia e Estatística (IBGE), é a menor unidade de área usada pelo Censo Demográfico. Cada quadrado pode ter o tamanho de uma quadra urbana (200x200m), mas são muito maiores em área rurais.
-        
-        <br/><br/> Em 2010, 13 566 488 blocos foram levantados. A população residente em 10 902 382 deles é igual a ... zero. Isso corresponde a 6,8 milhões de km<sup>2</sup>, aproximadamente 80% do território nacional. Assim, apesar da sua esmagadora população de 207,7 milhões, a maior parte do país permanece inabitada.
+        <b style="background-color:#F8C159">O que é essa área em amarelo?</b><br/>A grade estatística do Censo Demográfico 2010 é a menor unidade de área recenseada disponibilizada pelo IBGE. Em 2010, 13.566.488 blocos foram levantados. A população residente em 10.902.382 deles era igual a ... <b>zero</b>. <br/>Isso corresponde a 6,8 milhões de km<sup>2</sup>, aproximadamente 80% da área do território nacional. Assim, apesar da sua esmagadora população de 207,7 milhões, a maior parte do Brasil permanece inabitada.
 
 
-        <br/><br/><b>Isso significa que mais da metade da superfície do país está intocada?</b> <br/>Dificilmente. Sim, grande parte desses quadrados cobrem áreas naturais, na floresta amazônica, no pantanal, no pampa, algumas em áreas protegidas. No entanto, inabitado não significa desocupado, nem inexplorado. 
+        <br/><br/><b style="background-color:#F8C159">Isso significa que mais da metade da superfície do país está intocada?</b> <br/>Dificilmente. Sim, grande parte desses quadrados cobrem áreas naturais, na floresta amazônica, no pantanal, no pampa, algumas em áreas protegidas. No entanto, inabitado não significa desocupado, nem inexplorado. 
 
         <br/><br/>Uma grande parte dessas áreas inabitadas é coberta por terras agrícolas, indústrias, comércios, infraestruturas de transporte, instalações militares,  e muitas outras áreas por onde as pessoas passam, mas onde <b><i>não mora ninguém</i></b>.
+
       </p>
       </div>
+
+      <div style="position: fixed; bottom: 13.5rem; right:2.2rem; width:20vw; overflow-y: hidden;  overflow-x: hidden; z-index: 1000">
+
+     		 <p style="font-family: 'Ubuntu', sans-serif; font-size: 9.5pt; color: white; text-align: justify; text-justify: inter-word; max-width: 390px; padding-right:5px; padding-left: 15px;"> 
+
+       		 <a href="https://github.com/guilhermeiablo/aquinaomoraninguem" target="_blank"><b style="background-color:#F8C159">Como esse mapa foi feito?</b> </a>
+      		</p>
+
+      	<iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fplanocpoa%2F&width=118&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId" width="118" height="46" style="border:none;overflow:hidden;padding-right:5px; padding-left: 15px; width:20vw" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
       </div>
 
-      <div style="position: fixed; bottom: 2rem; right:2.5rem; align-self: right">
-        <img src="img/pic.png" style="width: 20vw; z-index: 50" />
+      </div>
+
+      <div style="position: fixed; bottom: 16px; right:2rem; align-self: right">
+        <img src="img/pic.png" style="max-width: 20vw; z-index: 50; max-height:220px" />
       </div>
 
 
