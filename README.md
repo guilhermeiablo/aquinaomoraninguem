@@ -7,14 +7,14 @@
 <p>Following, we open our resultant shapefile in TileMill. We add a shapefile containing water polygons (obtained through openstreetmap) with the rule comp-op: src-out. If you haven't pre-selected tiles in step 1, just use a rule for CartoCSS symbology along with the water-polygon and admin-boundary shapefile with the <a href="http://tilemill-project.github.io/tilemill/docs/manual/carto/">CSS Carto</a> rule "comp-op: dst-out". It should look something like this:
   
   #water-polygon{polygon-comp-op: dst-out;}
-  #admin-bound{polygon-comp-op: dst-in;}
+  <br/>#admin-bound{polygon-comp-op: dst-in;}
 
-.grade{
-  [POP=0] {
-  polygon-comp-op: src-over;
-  polygon-comp-op: src-in;
-  line-width:0;
- polygon-fill:#FEB63E;
+<br/><br/>.grade{
+  <br/>[POP=0] {
+  <br/>polygon-comp-op: src-over;
+  <br/>polygon-comp-op: src-in;
+  <br/>line-width:0;
+ <br/>polygon-fill:#FEB63E;
  }
   }
   
@@ -24,11 +24,11 @@
 <p>The MBTiles file generated has all our imagery packed into it, but now we need to convert them to PNG. To do so, we can use a handy library called mbutil which is capable of converting MBTiles to PNG.
 
 Download and install mbutil: 
-git clone git://github.com/mapbox/mbutil.git
-sudo python setup.py install
-mb-util -h to verify it worked.
-Convert the tiles using the following command: 
-mb-util --image_format=png aquinaomoraninguem.mbtiles aquinaomoraninguem
+<br/>git clone git://github.com/mapbox/mbutil.git
+<br/>sudo python setup.py install
+<br/>mb-util -h to verify it worked.
+<br/>Convert the tiles using the following command: 
+<br/>mb-util --image_format=png aquinaomoraninguem.mbtiles aquinaomoraninguem
 It will generate a folder, in my case aquinaomoraninguem, which will contain all of your map tiles in PNG format. 
 
 This should generate a ~400MB sized folder.</p>
