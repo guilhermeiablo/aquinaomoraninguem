@@ -4,7 +4,7 @@
 <p>Start by downloading data from the <a href="http://mapasinterativos.ibge.gov.br/grade/default.html"> Brazilian 2010 Census Statistic Grid </a> (56 shapefiles), and by a simple operation (whether through QGis interface or using python) for selecting only squares in which population is not zero. I've included a python script example used for the batch selection in Qgis in the /py folder. For the rendering to be more efficient in TileMill, we erased every square from a Brazil administrative boundary polygon obtained through a query request in OpenStreetMap (administrative boundary). </p>
 
 <h2>2. TileMill</h2>
-<p>Following, we open our resultant shapefile in TileMill. We add a shapefile containing water polygons (obtained through openstreetmap) with the rule comp-op: src-out. If you haven't pre-selected tiles in step 1, just use a rule for CartoCSS symbology along with the water-polygon and admin-boundary shapefile with the CSS Carto rule "comp-op: dst-out". It should look something like this:
+<p>Following, we open our resultant shapefile in TileMill. We add a shapefile containing water polygons (obtained through openstreetmap) with the rule comp-op: src-out. If you haven't pre-selected tiles in step 1, just use a rule for CartoCSS symbology along with the water-polygon and admin-boundary shapefile with the <a href="http://tilemill-project.github.io/tilemill/docs/manual/carto/">CSS Carto</a> rule "comp-op: dst-out". It should look something like this:
   
   #water-polygon{polygon-comp-op: dst-out;}
   #admin-bound{polygon-comp-op: dst-in;}
