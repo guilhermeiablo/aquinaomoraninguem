@@ -33,7 +33,7 @@ It will generate a folder, in my case aquinaomoraninguem, which will contain all
 
 This should generate a ~400MB sized folder.</p>
 
-<h2>4. Hosting in php server</h2>
+<h2>4. Hosting in ftp server</h2>
 <p>If you navigate around your folder of unpacked tiles, you'll notice that the images are extracted into a highly organized structure of level\column\row. This structure is understood by various mapping programs and APIs, so all you have to do at this point is put your tiles onto a web-facing server.</p>
 
 <h2>5. Reference in leaflet</h2>
