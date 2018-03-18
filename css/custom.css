@@ -1,3 +1,23 @@
+@media screen and (max-width: 600px){
+  #box {
+    visibility: hidden;
+  }
+  #fundo {
+    visibility: hidden;
+  }
+  #pic {
+    visibility: hidden;
+  }  
+  #title {
+    width: 100vh;
+  }
+   #img {
+    width: 100vh;
+  }
+
+}
+
+
 .scrollbar
 {
   overflow-x: hidden;
