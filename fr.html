@@ -53,7 +53,7 @@
   	   
     	<!-- BLUE BACKGROUND -->
 
-  	   <div id = fundo style="position: fixed; top:0; right:0; bottom:16px; width: 22.5vw; background-color: #74D0F0;"> </div>
+  	   <div id = fundo style="position: fixed; top:0; right:0; bottom:16px; width: 22.5vw; background-color: #3DBDF0;"> </div>
 
 
 
@@ -74,12 +74,12 @@
         
         <p style="font-family: 'Ubuntu', sans-serif; font-size: 9.5pt; color: white; text-align: justify; text-justify: inter-word; max-width: 390px; padding-right:5px; padding-left: 15px;"> 
 
-        <b style="background-color:#F8C159">Qu'est-ce que c'est que cette aire en orange ?</b><br/>Cette surface est composée de plusieurs carreaux de 1km<sup>2</sup> dans lesquels la population résidente est zéro. La donnée est originaire de la Grille Statistique du Census Démographique de 2010, la moins grande unité recensée publiée par l'Institut Brésilien de Géographie et Statistique (IBGE).
+        <b style="background-color:#F8C159">Qu'est-ce que c'est que cette aire en orange ?</b><br/>Cette surface est composée de plusieurs carreaux de 1km<sup>2</sup> dans lesquels la population résidente est nulle. La donnée est originaire de la Grille Statistique du Census Démographique de 2010, la moins grande unité recensée publiée par l'Institut Brésilien de Géographie et Statistique (IBGE).
         
-        <br/><br/>En 2010, 13.566.488 carreaux ont été récensés. Parmi la totalité de carreaux, 10.902.382 possédaient une population égal à zéro. <br/>Celà correspond à 6,8 million km<sup>2</sup>, aproximativement 80% du territoire national. Ainsi, malgré son énorme population de 207.7 millions de personnes, pour la plupart, le territoire Brésilien reste dépeuplé.
+        <br/><br/>En 2010, 13.566.488 carreaux ont été récensés. Parmi la totalité des carreaux, 10.902.382 possédaient une population égale à zéro. <br/>Celà correspond à 6,8 million de km<sup>2</sup>, aproximativement 80% du territoire national. Ainsi, malgré son énorme population de 207.7 millions de personnes, pour la plupart, le territoire Brésilien reste dépeuplé.
 
 
-        <br/><br/><b style="background-color:#F8C159">C'est-à-dire que la plupart du Brésil est couverte de nature ?</b> <br/>Difficilement. Oui, une grande partie de ces carreaux couvre des espaces naturels, la forêt amazonienne, le pantanal, le pampa, parfois des espaces protégés. Pourtant, dépeuplé ne veut pas dire non développé ni inexploré.
+        <br/><br/><b style="background-color:#F8C159">C'est-à-dire que la plupart du Brésil est couverte de nature ?</b> <br/>Difficilement. Oui, une grande partie de ces carreaux couvre des espaces naturels, la Forêt Amazonienne, le Pantanal, le Pampa, parfois des espaces protégés. Pourtant, dépeuplé ne veut pas dire non développé ni inexploré.
 
         <br/><br/>Une deuxième partie de la surface couverte par les carreaux est occupée par des espaces agricoles, des industries, des commerces, des installations militaires, des infrastructures routières et plein d'autres espaces où des gens passent, mais où <i>personne ne vit</i>.</b>.
 
@@ -145,21 +145,13 @@
 
 
 
-/////L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-    //maxZoom: 12,
-    //attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-     // '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-    //  'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-   // id: 'mapbox.streets'
- // }).addTo(map);/////
 
-L.tileLayer('https://api.mapbox.com/styles/v1/plano-c/cjeo5z8dlwto62rt5w1g1rr2n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ3VpbGhlcm1lLWMiLCJhIjoiY2pleWIzcmpyMGJxeTJxcGQxeG00b2g3ZyJ9.yGPLC3Y77mLMi7uQoGAPBw', {
+L.tileLayer('https://{s}.tile.openstreetmap.se/hydda/base/{z}/{x}/{y}.png', {
         maxZoom: 12,
         pane: 'base',
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://ibge.gov.br">IBGE</a> and ' +
-      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-      'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-      }).addTo(map);
+        }).addTo(map);
+
+
 
 L.tileLayer('http://perso-etudiant.u-pem.fr/~gmarqu03/tiles/{z}/{x}/{y}.png', {
         maxZoom: 12,
@@ -167,10 +159,12 @@ L.tileLayer('http://perso-etudiant.u-pem.fr/~gmarqu03/tiles/{z}/{x}/{y}.png', {
         pane: 'ninguemtiles',
       }).addTo(map);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/plano-c/cjeo5xjqtfdxg2ro69wzpfbb8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZ3VpbGhlcm1lLWMiLCJhIjoiY2pleWIzcmpyMGJxeTJxcGQxeG00b2g3ZyJ9.yGPLC3Y77mLMi7uQoGAPBw', {
+L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_only_labels/{z}/{x}/{y}.png', {
         maxZoom: 12,
         pane: 'labels',
-        opacity: 0.8
+        opacity: 0.8,
+        attribution: 'Tiles and data courtesy of &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="http://cartodb.com/attributions">CartoDB</a> &copy; <a href="http://mapasinterativos.ibge.gov.br/grade/default.html">IBGE',
+  subdomains: 'abcd',
       }).addTo(map);
 
 
